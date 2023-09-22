@@ -1,0 +1,54 @@
+@model LuvLane.Models.Profile.ProfileDetail
+
+@{
+    string title = "Delete Profile: " + Model.FirstName;
+    ViewData["Title"] = title;
+}
+
+<h1>@title</h1>
+<h4>Are you sure you want to Delete @Model.FirstName?</h4>
+<hr />
+
+
+<dl class="row">
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Id)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Id)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.FirstName)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayNameFor(model => model.FirstName)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.LastName)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayNameFor(model => model.LastName)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Age)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayNameFor(model => model.Age)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Gender)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayNameFor(model => model.Gender)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Bio)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayNameFor(model => model.Bio)
+    </dd>
+</dl>
+<form asp-action="Delete">
+    <input type="submit" value="Delete" class="btn btn-danger" /> |
+    <a asp-action="Index">Back to Profile</a>
+</form>

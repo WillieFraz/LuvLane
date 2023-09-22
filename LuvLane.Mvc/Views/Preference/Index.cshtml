@@ -1,0 +1,37 @@
+@model IEnumerable<LuvLane.Models.Preference.PreferenceListItem>
+
+@{
+    ViewData["Title"] = "Preferences";
+}
+
+<h1>Preferences</h1>
+<p>
+    @Html.ActionLink("Create a Preference", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.HighestAgeRange)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LowestAgeRange)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gender)
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modleItem => item.HighestAgeRange)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LowestAgeRange)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gender)
+            </td>
+        </tr>
+    }
+</table>

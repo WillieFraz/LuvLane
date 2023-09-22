@@ -1,0 +1,48 @@
+@model IEnumerable<LuvLane.Models.Profile.ProfileListItem>
+
+@{
+    ViewData["Title"] = "Profile Index";
+
+    <h1>Profile Index</h1>
+    <p>
+        @Html.ActionLink("Create Profile", "Create")
+    </p>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.FirstName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Age)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Gender)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FirstName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Age)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Gender)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", "Profile", new { id = item.Id }) |
+                        @Html.ActionLink("Info", "Info", "Profile", new { id = item.Id }) |
+                        @Html.ActionLink("Delete", "Delete", "Profile", new { id = item.Id})
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

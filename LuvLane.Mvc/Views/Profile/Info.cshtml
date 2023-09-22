@@ -1,0 +1,59 @@
+@model LuvLane.Models.Profile.ProfileDetail
+
+@{
+    ViewData["Title"] = Model.FirstName;
+}
+
+<h1>@Model.FirstName @Model.LastName</h1>
+<h4>Profile Details</h4>
+<hr />
+
+<dl class="row">
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Id)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Id)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.FirstName)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayNameFor(model => model.FirstName)
+    </dd>
+     <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.LastName)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayNameFor(model => model.LastName)
+    </dd>
+     <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Age)
+    </dt>
+    <dd class="col-sm-10">
+        @if (Model.Age >= 16)
+        {
+        @Html.DisplayNameFor(model => model.Age)
+        }
+        else
+        {
+            <span>Must be 16 and above </span>
+        }
+    </dd>
+         <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Gender)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayNameFor(model => model.Gender)
+    </dd>
+         <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Bio)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayNameFor(model => model.Bio)
+    </dd>
+</dl>
+<div>
+    <a asp-action="Edit" asp-route-id=@Model.Id>Edit</a> |
+    <a asp-action="Index">Back to Profile</a>
+</div>

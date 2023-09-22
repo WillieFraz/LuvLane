@@ -1,0 +1,57 @@
+@model LuvLane.Models.Profile.ProfileEdit
+
+@{
+    string title = "Edit" + Model.FirstName;
+    ViewData["Title"] = title;
+}
+
+<h1>@title</h1>
+<hr />
+
+<form asp-action="Edit">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                @Html.DisplayNameFor(r => r.Id)
+                @Html.DisplayFor(r => r.Id)
+            </div>
+            <div class="form-group">
+                @Html.DisplayNameFor(r => r.FirstName)
+                @Html.EditorFor(r => r.FirstName)
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                @Html.DisplayNameFor(r => r.LastName)
+                @Html.EditorFor(r => r.LastName)
+                <span asp-validation-for="LastName" class="text-danger"></span>
+
+            </div>
+            <div class="form-group">
+                @Html.DisplayNameFor(r => r.Age)
+                @Html.EditorFor(r => r.Age)
+                <span asp-validation-for="Age" class="text-danger"></span>
+
+            </div>
+            <div class="form-group">
+                @Html.DisplayNameFor(r => r.Gender)
+                @Html.DisplayFor(r => r.Gender);
+            </div>
+            <div class="form-group">
+                @Html.DisplayNameFor(r => r.Bio)
+                @Html.EditorFor(r => r.Bio)
+                <span asp-validation-for="Bio" class="text-danger"></span>
+
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>
+</form>
+
+@section Scripts {
+@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

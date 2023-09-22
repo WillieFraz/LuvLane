@@ -1,0 +1,41 @@
+@model LuvLane.Models.Preference.PreferenceCreate
+
+@{
+    string title = "Add Preferences";
+    ViewData["Title"] = title;
+}
+
+<h1>@title</h1>
+<hr />
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div class="form-group">
+                <label asp-for="HighestAgeRange" class="control-label"></label>
+                <input type="HighestAgeRange" class="control-label" />
+                <span asp-validation-for="HighestAgeRange" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LowestAgeRange" class="control-label"></label>
+                <input type="LowestAgeRange" class="control-label" />
+                <span asp-validation-for="LowestAgeRange" class="text-danger"></span>
+
+            </div>
+            <div class="form-group">
+                <label asp-for="Gender" class="control-label"></label>
+                <input type="Gender" class="control-label" />
+                <span asp-validation-for="Gender" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Add" class="btn btn-primary" />
+            </div>
+        </form>
+        <div>
+            @Html.ActionLink("Back to Preferences", "Index")
+        </div>
+    </div>
+</div>
+@section Scripts {
+@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

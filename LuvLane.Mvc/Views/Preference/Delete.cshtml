@@ -1,0 +1,35 @@
+@model LuvLane.Models.Preference.PreferenceDetail
+
+@{
+    string title = "Delete Preference";
+    ViewData["Title"] =title;
+}
+
+<h1>@title</h1>
+<h4>Are you sure you want to Delete This Preference?</h4>
+<hr />
+
+<dl class="row">
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.HighestAgeRange)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.HighestAgeRange)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.LowestAgeRange)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.LowestAgeRange)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Gender)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Gender)
+    </dd>
+</dl>
+<form asp-action="Delete">
+    <input type="submit" value="Delete" class="btn btn-danger" />
+    <a asp-action="Index">Back to Preference</a>
+</form>
