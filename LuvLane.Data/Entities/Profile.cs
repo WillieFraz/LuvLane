@@ -10,7 +10,7 @@ public class Profile
     public int Profileid { get; set; }
 
     [ForeignKey("UserEntity")]
-    public string UserId { get; set; }
+    public string UserId { get; set; } = string.Empty;
     public virtual UserEntity User { get; set; } = null!;
 
     [Required]

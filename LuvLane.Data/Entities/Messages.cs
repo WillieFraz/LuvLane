@@ -11,11 +11,11 @@ namespace LuvLane.Data.Entities
         public int MessageId { get; set; }
 
         [ForeignKey("UserEntity")]
-        public string UserSenderId { get; set; }
+        public string UserSenderId { get; set; } = string.Empty;
         public virtual UserEntity User { get; set; } = null!;
 
         [ForeignKey("UserEntity")]
-        public string UserRecieverId { get; set; }
+        public string UserRecieverId { get; set; } = string.Empty;
         public virtual UserEntity Users { get; set; } = null!;
 
         [Required, MinLength(1), MaxLength(3000)]
